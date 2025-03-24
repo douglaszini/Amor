@@ -30,17 +30,18 @@
       position: fixed;
       width: 0;
       height: 0;
+      left: 50px;
     }
-    /* Mobile: empilha os elementos verticalmente */
+    /* Mobile: ajusta a caixa e reposiciona os elementos */
     @media screen and (max-width: 768px) {
       #codeDisplay {
          top: 0;
          left: 0;
          width: 100%;
-         height: 50vh;
+         height: 60vh; /* altura aumentada para evitar corte de palavras */
       }
       #heart, #echo {
-         top: calc(50vh + 20px);
+         top: calc(60vh + 20px);
          left: calc(50% - 150px);
          width: 300px;
          height: 300px;
@@ -51,7 +52,7 @@
   <style id="dynamicStyle"></style>
 </head>
 <body>
-  <!-- Elementos do coração (que serão estilizados pelo CSS digitado) -->
+  <!-- Elementos do coração (serão estilizados pelo CSS digitado) -->
   <div id="heart"><i></i></div>
   <div id="echo"></div>
   
@@ -70,8 +71,7 @@
 /*
  * 
  * O nosso dia está chegando, o que devo dar para minha namorada? 
- * Que tal fazer uma página web (ate porque é so isso que sei fazer direito kkkk), 
- hehe, e dar a ela um coraçãozinho 
+ * Que tal fazer uma página web (ate porque é so isso que sei fazer direito kkkk), hehe, e dar a ela um coraçãozinho 
  * Mas... como fazer isso? 
  * Primeiro, vamos criar uma caixinha para colocar nosso código, hehe
  * Então... vamos começar!
@@ -104,8 +104,7 @@
 /*
  * Uhul, olha só o destaque de código está funcionando vamos continuar!
  * Primeiro, vamos mover essa caixa de código ela tá ocupando muito espaço
- * Como é um layout responsivo vai ter aparências diferentes 
- no celular e no PC, viu hehehe
+ * Como é um layout responsivo vai ter aparências diferentes no celular e no PC, viu hehehe
  */
 
 @media screen and (max-width: 768px) {
@@ -113,7 +112,7 @@
         left: 0;
         right: 0;
         top: 0;
-        height: 50vh;
+        height: 60vh;
         width: 100%;
     }
 }
@@ -133,7 +132,7 @@
         position: fixed;
         width: 300px;
         height: 300px;
-        top: calc(50vh + 20px);
+        top: calc(60vh + 20px);
         left: calc(50% - 150px);
         text-align: center;
         transform: scale(0.95);
@@ -275,10 +274,8 @@
  * Ehehe
  * Assim nosso pequeno coração está prontinho
  * E aí Tá bonitinho
- * Meu amor! Feliz nosso dia por mais simples 
- que seja esse codigo e uma forma 
- *de eu demonstrar meu amor por você atraves de 
- linhas de codigos kkkkkkk!
+ * Meu amor! Feliz nosso dia por mais simples que seja esse codigo e uma forma 
+ *de eu demonstrar meu amor por você atraves de linhas de codigos kkkkkkk!
  */
 /*
  * Dedico esta página à minha namorada Ana (Banana) 💕
