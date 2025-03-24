@@ -6,44 +6,41 @@
   <!-- CSS base para posicionamento inicial -->
   <style>
     body {
-      margin: 0;
+      margin: 0px;
       padding: 0;
       background: #fff;
       color: #000;
       font-family: sans-serif;
     }
-    /* Desktop: a caixa de código fica à esquerda */
+    /* Na versão desktop, a caixa de código fica à esquerda */
     #codeDisplay {
       position: fixed;
       top: 0;
       bottom: 0;
-      left: 10px;
-      width: 45%;
+      left: 20px;
+      width: 50%;
       padding: 10px;
       overflow: auto;
       font-family: monospace;
       background: #fff;
       color: #000;
     }
-    /* Elementos do coração começam sem dimensão (serão definidos via CSS dinâmico) */
+    /* Elementos do coração começam sem dimensão */
     #heart, #echo {
       position: fixed;
       width: 0;
       height: 0;
     }
-    /* Mobile: a caixa de código se adapta automaticamente à largura e ocupa 70% da altura da tela */
-    @media screen and (max-width: 768px) {
+    /* Mobile: ajusta a caixa e reposiciona os elementos */
+    @media screen and (max-width: 900px) {
       #codeDisplay {
          top: 0;
          left: 0;
          width: 100%;
-         height: 70vh; /* 70% da altura da viewport */
-         padding: 10px;
-         box-sizing: border-box;
+         height: 60vh; /* altura aumentada */
       }
-      /* O coração fica logo abaixo da caixa de código */
       #heart, #echo {
-         top: calc(70vh + 20px);
+         top: calc(60vh + 20px);
          left: calc(50% - 150px);
          width: 300px;
          height: 300px;
@@ -54,11 +51,8 @@
   <style id="dynamicStyle"></style>
 </head>
 <body>
-  <!-- Áudio local para a música de fundo -->
-  <!-- Certifique-se de que "music.mp3" esteja no mesmo diretório ou ajuste o caminho -->
-  <audio id="bgMusic" src="music.mp3" autoplay loop style="display:none;"></audio>
   
-  <!-- Elementos do coração (serão estilizados via CSS dinâmico) -->
+  <!-- Elementos do coração (serão estilizados pelo CSS digitado) -->
   <div id="heart"><i></i></div>
   <div id="echo"></div>
   
@@ -77,7 +71,7 @@
 /*
  * 
  * O nosso dia está chegando, o que devo dar para minha namorada? 
- * Que tal fazer uma página web (até porque é só isso que sei fazer direito kkkk)
+ * Que tal fazer uma página web (ate porque é so isso que sei fazer direito kkkk), 
  * hehe, e dar a ela um coraçãozinho 
  * Mas... como fazer isso? 
  * Primeiro, vamos criar uma caixinha para colocar nosso código, hehe
@@ -85,9 +79,9 @@
  */
 
 /* 
- * Não dá, tudo branco assim, fico tonto só de olhar o código.
- * Preciso de realce de sintaxe, então vamos fazer isso agora.
- * Cores baseadas no preto, igual o Batman 🦇🦇🦇🦇.
+ * Não dá, tudo branco assim, fico tonto só de olhar o código
+ * Preciso de realce de sintaxe então vamos fazer isso agora
+ * Cores baseadas no preto igual o batman🦇🦇🦇🦇
  */
 
 /* A partir daqui, a caixa onde o código está sendo escrito muda de estilo */
@@ -109,17 +103,17 @@
 }
 
 /*
- * Uhul, olha só: o destaque de código está funcionando, vamos continuar!
- * Primeiro, vamos mover essa caixa de código, que está ocupando muito espaço.
- * Como é um layout responsivo, vai ter aparências diferentes no celular e no PC, viu hehehe.
+ * Uhul, olha só o destaque de código está funcionando vamos continuar!
+ * Primeiro, vamos mover essa caixa de código ela tá ocupando muito espaço
+ * Como é um layout responsivo vai ter aparências diferentes no celular e no PC, viu hehehe
  */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     #codeDisplay {
         left: 0;
         right: 0;
         top: 0;
-        height: 70vh;
+        height: 80vh;
         width: 100%;
     }
 }
@@ -139,7 +133,7 @@
         position: fixed;
         width: 300px;
         height: 300px;
-        top: calc(70vh + 20px);
+        top: calc(60vh + 20px);
         left: calc(50% - 150px);
         text-align: center;
         transform: scale(0.95);
@@ -175,7 +169,7 @@
     transform: rotate(45deg);
     transform-origin: 100% 100%;
 }
-/* Vamos adicionar um sombreamento, hehe */
+/* Vamos adicionar um sombreamento hehe */
 #heart::after {
     box-shadow: inset -6px -6px 0px 6px rgba(255,255,255,0.1);
 }
@@ -184,7 +178,7 @@
 }
 
 /*
- * Este aqui é meu pequeno coraçãozinho.
+ * Este aqui é~meu pequeno coraçãozinho~
  * Quero assinar meu nome nele!
  */
 #heart i::before {
@@ -242,7 +236,7 @@
     }
 }
 /*
- * Beleza! Agora vamos preparar para ele começar a pulsar, hehe.
+ * Beleza! Agora vamos preparar para ele começar a pulsar, hehe
  */
 #heart, #echo {
     -webkit-animation-duration: 2000ms;
@@ -270,7 +264,7 @@
  * ...3...
  * ...2...
  * ...1...
- * Espera mais um pouquinho, bleh bleh bleh...
+ * Espera mais um pouquinho bleh bleh bleh 
  * ...Lá vem!
  */
 #heart, #echo {
@@ -278,15 +272,15 @@
     animation-play-state: running;
 }
 /*
- * Ehehe,
- * Assim nosso pequeno coração está prontinho.
- * E aí, tá bonitinho.
- * Meu amor! Feliz nosso dia por mais simples que seja esse código,
- * e uma forma de eu demonstrar meu amor por você através de linhas de código. Kkkkkkk!
+ * Ehehe
+ * Assim nosso pequeno coração está prontinho
+ * E aí Tá bonitinho
+ * Meu amor! Feliz nosso dia por mais simples que seja esse codigo e uma forma 
+ *de eu demonstrar meu amor por você atraves de linhas de codigos kkkkkkk!
  */
 /*
  * Dedico esta página à minha namorada Ana (Banana) 💕
- * Você é a mais foda de todas.
+ * Você é a mais foda de todas
  */
 `;
     const codeDisplay = document.getElementById('codeDisplay');
