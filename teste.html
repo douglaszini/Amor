@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Presente para minha namorada</title>
-  <!-- CSS base (mínimo) para posicionar os elementos -->
+  <!-- CSS base para posicionamento inicial -->
   <style>
     body {
       margin: 0;
@@ -12,35 +12,50 @@
       color: #000;
       font-family: sans-serif;
     }
-    /* Caixa de exibição do código inicialmente com fundo branco */
+    /* Na versão desktop, a caixa de código fica à esquerda */
     #codeDisplay {
       position: fixed;
       top: 0;
-      right: 0;
       bottom: 0;
-      left: 0;
+      left: 10px;
+      width: 45%;
       padding: 10px;
       overflow: auto;
       font-family: monospace;
       background: #fff;
       color: #000;
     }
-    /* Os elementos do coração começam sem dimensão para só aparecerem quando o CSS for aplicado */
+    /* Elementos do coração começam sem dimensão */
     #heart, #echo {
       position: fixed;
       width: 0;
       height: 0;
+    }
+    /* Mobile: empilha os elementos verticalmente */
+    @media screen and (max-width: 768px) {
+      #codeDisplay {
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 50vh;
+      }
+      #heart, #echo {
+         top: calc(50vh + 20px);
+         left: calc(50% - 150px);
+         width: 300px;
+         height: 300px;
+      }
     }
   </style>
   <!-- CSS dinâmico que será escrito e terá precedência -->
   <style id="dynamicStyle"></style>
 </head>
 <body>
-  <!-- Elementos que serão estilizados via CSS dinâmico -->
+  <!-- Elementos do coração (que serão estilizados pelo CSS digitado) -->
   <div id="heart"><i></i></div>
   <div id="echo"></div>
   
-  <!-- Caixa onde o CSS (e a historinha) será exibido enquanto é digitado -->
+  <!-- Caixa onde o código (e a historinha) é exibido enquanto é digitado -->
   <pre id="codeDisplay"></pre>
 
   <script>
@@ -55,7 +70,8 @@
 /*
  * 
  * O nosso dia está chegando, o que devo dar para minha namorada? 
- * Que tal fazer uma página web (ate porque é so isso que sei fazer direito kkkk), hehe, e dar a ela um coraçãozinho 
+ * Que tal fazer uma página web (ate porque é so isso que sei fazer direito kkkk), 
+ hehe, e dar a ela um coraçãozinho 
  * Mas... como fazer isso? 
  * Primeiro, vamos criar uma caixinha para colocar nosso código, hehe
  * Então... vamos começar!
@@ -72,7 +88,7 @@
   position: fixed;
   top: 30px;
   bottom: 30px;
-  right: 10px;
+  left: 10px;
   width: 45%;
   transition: left 500ms;
   overflow: auto;
@@ -88,21 +104,23 @@
 /*
  * Uhul, olha só o destaque de código está funcionando vamos continuar!
  * Primeiro, vamos mover essa caixa de código ela tá ocupando muito espaço
- * Como é um layout responsivo vai ter aparências diferentes no celular e no PC, viu hehehe
+ * Como é um layout responsivo vai ter aparências diferentes 
+ no celular e no PC, viu hehehe
  */
 
 @media screen and (max-width: 768px) {
     #codeDisplay {
-        left: 6%;
-        right: 6%;
-        top: 50%;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 50vh;
+        width: 100%;
     }
 }
 @media screen and (min-width: 768px) {
     #codeDisplay {
-        width: 48%;
-        left: 50%;
-        bottom: 30px;
+        left: 10px;
+        width: 45%;
     }
 }
 
@@ -115,9 +133,8 @@
         position: fixed;
         width: 300px;
         height: 300px;
-        margin: 30px auto;
-        left: 0;
-        right: 0;
+        top: calc(50vh + 20px);
+        left: calc(50% - 150px);
         text-align: center;
         transform: scale(0.95);
     }
@@ -258,8 +275,10 @@
  * Ehehe
  * Assim nosso pequeno coração está prontinho
  * E aí Tá bonitinho
- * Meu amor! Feliz nosso dia por mais simples que seja esse codigo e uma forma 
- *de eu demonstrar meu amor por você atraves de linhas de codigos kkkkkkk!
+ * Meu amor! Feliz nosso dia por mais simples 
+ que seja esse codigo e uma forma 
+ *de eu demonstrar meu amor por você atraves de 
+ linhas de codigos kkkkkkk!
  */
 /*
  * Dedico esta página à minha namorada Ana (Banana) 💕
